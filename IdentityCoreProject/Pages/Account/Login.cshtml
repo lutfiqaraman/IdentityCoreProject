@@ -1,0 +1,28 @@
+﻿@page
+@model IdentityCoreProject.Pages.Account.LoginModel
+@{
+}
+
+<div class="container border" style="padding: 20px">
+    <form method="post">
+        <div class="mb-3 row">
+            <label asp-for="Credential!.UserName" class="col-3 col-form-label"></label>
+            <div class="col-6">
+                <input asp-for="Credential!.UserName" class="form-control" type="text" />
+            </div>
+        </div>
+
+        <div class="mb-3 row">
+            <label asp-for="Credential!.Password" class="col-3 col-form-label"></label>
+            <div class="col-6">
+                <input asp-for="Credential!.Password" class="form-control" type="password"/>
+            </div>
+        </div>
+
+        <div class="mb-3 row">
+            <div class="col-3">
+                <input class="btn btn-primary" type="submit" value="Login" />
+            </div>
+        </div>
+    </form>
+</div>
