@@ -15,6 +15,10 @@ namespace IdentityCoreProject.Pages.Account
 
         public void OnPost()
         {
+            if (!ModelState.IsValid)
+                return;
+
+
         }
     }
 }
