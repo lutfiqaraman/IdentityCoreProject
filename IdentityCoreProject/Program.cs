@@ -1,16 +1,14 @@
+using IdentityCoreProject.utilities;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
 
-builder.Services.AddAuthentication().AddCookie("AuthCookie", options =>
-{
-    options.Cookie.Name = "AuthCookie";
-});
+UserAuthentication userAuthentication = new UserAuthentication(builder);
+userAuthentication.AddAuthentication();
 
 var app = builder.Build();
-
-
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
