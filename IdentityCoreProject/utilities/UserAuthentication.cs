@@ -13,6 +13,7 @@
             webApplicationBuilder.Services.AddAuthentication().AddCookie("AuthCookie", options =>
             {
                 options.Cookie.Name = "AuthCookie";
+                options.LoginPath= "/Account/Login";
             });
         }
     }
