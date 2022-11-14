@@ -17,7 +17,7 @@ namespace IdentityCoreProject.utilities
             webApplicationBuilder.Services.AddAuthentication(cookie)
                 .AddCookie(cookie, options =>    
                 {
-                    options.Cookie.Name = "AuthCookie";    
+                    options.Cookie.Name = "AuthCookie";
                     options.LoginPath = "/Account/Login";    
                 });
         }
