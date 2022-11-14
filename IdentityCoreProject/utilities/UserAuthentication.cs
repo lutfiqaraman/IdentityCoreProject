@@ -1,4 +1,6 @@
-﻿namespace IdentityCoreProject.utilities
+﻿using Microsoft.AspNetCore.Authentication.Cookies;
+
+namespace IdentityCoreProject.utilities
 {
     public class UserAuthentication
     {
@@ -10,11 +12,14 @@
 
         public void AddAuthentication()
         {
-            webApplicationBuilder.Services.AddAuthentication().AddCookie("AuthCookie", options =>
-            {
-                options.Cookie.Name = "AuthCookie";
-                options.LoginPath= "/Account/Login";
-            });
+            string cookie = CookieAuthenticationDefaults.AuthenticationScheme; 
+
+            webApplicationBuilder.Services.AddAuthentication(cookie)
+                .AddCookie(cookie, options =>    
+                {
+                    options.Cookie.Name = "AuthCookie";    
+                    options.LoginPath = "/Account/Login";    
+                });
         }
     }
 }
