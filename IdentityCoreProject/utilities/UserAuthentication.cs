@@ -18,8 +18,15 @@ namespace IdentityCoreProject.utilities
                 .AddCookie(cookie, options =>    
                 {
                     options.Cookie.Name = "AuthCookie";
-                    options.LoginPath = "/Account/Login";    
+                    options.LoginPath = "/Account/Login";
+                    options.AccessDeniedPath= "/Account/AccessDenied";
                 });
+
+            webApplicationBuilder.Services.AddAuthorization(options =>
+            {
+                options.AddPolicy("MustBelongToHRDepartment", 
+                    policy => policy.RequireClaim("Department", "HR"));
+            });
         }
     }
 }
