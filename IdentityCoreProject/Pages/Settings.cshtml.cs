@@ -4,8 +4,8 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace IdentityCoreProject.Pages
 {
-    [Authorize(Policy = "HRDepartment")]
-    public class HumanResourceModel : PageModel
+    [Authorize(Policy = "AdminDepartment")]
+    public class SettingsModel : PageModel
     {
         public void OnGet()
         {

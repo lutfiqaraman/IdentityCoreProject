@@ -24,8 +24,19 @@ namespace IdentityCoreProject.utilities
 
             webApplicationBuilder.Services.AddAuthorization(options =>
             {
-                options.AddPolicy("MustBelongToHRDepartment", 
-                    policy => policy.RequireClaim("Department", "HR"));
+                options.AddPolicy("AdminDepartment", 
+                    policy =>
+                    {
+                        policy.RequireClaim("Admin");
+                    });
+
+                options.AddPolicy("HRDepartment",
+                    policy =>
+                    {
+                        policy.RequireClaim("HR");
+                    });
+
+
             });
         }
     }

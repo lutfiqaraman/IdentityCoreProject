@@ -30,7 +30,9 @@ namespace IdentityCoreProject.Pages.Account
                     List<Claim>? claims = new List<Claim> 
                     { 
                         new Claim(ClaimTypes.Name, Credential.UserName),
-                        new Claim(ClaimTypes.Email, "admin@mywebsite.com")
+                        new Claim(ClaimTypes.Email, "admin@mywebsite.com"),
+                        new Claim("HR", "HRDepartment"),
+                        new Claim("Admin", "AdminDepartment")
                     };
 
                     ClaimsIdentity? identity = new ClaimsIdentity(claims, cookie);
