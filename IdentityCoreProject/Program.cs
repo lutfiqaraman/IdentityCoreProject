@@ -7,6 +7,7 @@ builder.Services.AddRazorPages();
 
 UserAuthentication userAuthentication = new UserAuthentication(builder);
 userAuthentication.AddAuthentication();
+userAuthentication.AddPolicy();
 
 var app = builder.Build();
 

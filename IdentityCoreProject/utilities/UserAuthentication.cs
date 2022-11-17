@@ -21,10 +21,13 @@ namespace IdentityCoreProject.utilities
                     options.LoginPath = "/Account/Login";
                     options.AccessDeniedPath= "/Account/AccessDenied";
                 });
+        }
 
+        public void AddPolicy()
+        {
             webApplicationBuilder.Services.AddAuthorization(options =>
             {
-                options.AddPolicy("AdminDepartment", 
+                options.AddPolicy("AdminDepartment",
                     policy =>
                     {
                         policy.RequireClaim("Admin");
@@ -35,8 +38,6 @@ namespace IdentityCoreProject.utilities
                     {
                         policy.RequireClaim("HR");
                     });
-
-
             });
         }
     }
