@@ -32,7 +32,8 @@ namespace IdentityCoreProject.Pages.Account
                         new Claim(ClaimTypes.Name, Credential.UserName),
                         new Claim(ClaimTypes.Email, "admin@mywebsite.com"),
                         new Claim("HR", "HRDepartment"),
-                        new Claim("Admin", "AdminDepartment")
+                        new Claim("Admin", "AdminDepartment"),
+                        new Claim("EmploymentDate", "2022-05-01")
                     };
 
                     ClaimsIdentity? identity = new ClaimsIdentity(claims, cookie);
