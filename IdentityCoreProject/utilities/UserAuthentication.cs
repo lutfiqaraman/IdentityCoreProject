@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authentication.Cookies;
+﻿using IdentityCoreProject.Authorization;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace IdentityCoreProject.utilities
 {
@@ -37,6 +38,12 @@ namespace IdentityCoreProject.utilities
                     policy =>
                     {
                         policy.RequireClaim("HR");
+                    });
+
+                options.AddPolicy("HRManager",
+                    policy =>
+                    {
+                        policy.Requirements.Add(new HRManager(3));
                     });
             });
         }

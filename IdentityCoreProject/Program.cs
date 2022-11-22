@@ -1,4 +1,7 @@
+using IdentityCoreProject.Authorization;
 using IdentityCoreProject.utilities;
+using Microsoft.AspNetCore.Authorization;
+using static IdentityCoreProject.Authorization.HRManager;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +11,8 @@ builder.Services.AddRazorPages();
 UserAuthentication userAuthentication = new UserAuthentication(builder);
 userAuthentication.AddAuthentication();
 userAuthentication.AddPolicy();
+
+builder.Services.AddSingleton<IAuthorizationHandler, HRManagerHandler>();
 
 var app = builder.Build();
 
