@@ -5,6 +5,8 @@ VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityCoreProject", "IdentityCoreProject\IdentityCoreProject.csproj", "{7943299E-E8F3-4D27-B131-3A8ADFD295B6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI", "WebAPI\WebAPI.csproj", "{07D0588A-BBAA-4D0C-9D94-D5595B608709}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{7943299E-E8F3-4D27-B131-3A8ADFD295B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7943299E-E8F3-4D27-B131-3A8ADFD295B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7943299E-E8F3-4D27-B131-3A8ADFD295B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07D0588A-BBAA-4D0C-9D94-D5595B608709}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07D0588A-BBAA-4D0C-9D94-D5595B608709}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07D0588A-BBAA-4D0C-9D94-D5595B608709}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07D0588A-BBAA-4D0C-9D94-D5595B608709}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
