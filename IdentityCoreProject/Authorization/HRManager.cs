@@ -18,7 +18,7 @@ namespace IdentityCoreProject.Authorization
                 if (!context.User.HasClaim(x => x.Type == "EmploymentDate"))
                     return Task.CompletedTask;
 
-                DateTime empDate = DateTime.Parse(context.User.FindFirst(x => x.Type == "EmploymentDate").Value);
+                DateTime empDate = DateTime.Parse(context.User.FindFirst(x => x.Type == "EmploymentDate")!.Value);
                 TimeSpan period = DateTime.Now - empDate;
 
                 if (period.Days > 30 * requirement.ProbationMonth)

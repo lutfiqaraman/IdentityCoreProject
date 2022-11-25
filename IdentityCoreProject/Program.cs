@@ -8,6 +8,11 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 
+builder.Services.AddHttpClient("WebAPI", client =>
+{
+    client.BaseAddress = new Uri("http://localhost:44330");
+});
+
 UserAuthentication userAuthentication = new UserAuthentication(builder);
 userAuthentication.AddAuthentication();
 userAuthentication.AddPolicy();
