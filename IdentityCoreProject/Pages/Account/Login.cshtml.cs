@@ -39,7 +39,12 @@ namespace IdentityCoreProject.Pages.Account
                     ClaimsIdentity? identity = new ClaimsIdentity(claims, cookie);
                     ClaimsPrincipal claimPrincipal = new ClaimsPrincipal(identity);
 
-                    await HttpContext.SignInAsync(cookie, claimPrincipal);
+                    AuthenticationProperties? authProperties = new()
+                    {
+                        IsPersistent = Credential.RememberMe
+                    };
+
+                    await HttpContext.SignInAsync(cookie, claimPrincipal, authProperties);
 
                     return 
                         RedirectToPage("/Index");
