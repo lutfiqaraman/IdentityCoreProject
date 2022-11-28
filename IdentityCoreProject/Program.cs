@@ -10,7 +10,7 @@ builder.Services.AddRazorPages();
 
 builder.Services.AddHttpClient("WebAPI", client =>
 {
-    client.BaseAddress = new Uri("http://localhost:44330");
+    client.BaseAddress = new Uri("https://localhost:7154/");
 });
 
 UserAuthentication userAuthentication = new UserAuthentication(builder);
