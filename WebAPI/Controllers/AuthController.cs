@@ -7,7 +7,7 @@ namespace WebAPI.Controllers
     [ApiController]
     public class AuthController : ControllerBase
     {
-        [HttpGet]
+        [HttpPost]
         public IActionResult Authenticate([FromBody] string data)
         {
 
